@@ -1,15 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
 
-function HelloWorld(props) {
-	return (
-		<h1>Hello World!</h1>
-	);
-}
-
-ReactDOM.render(
-	<HelloWorld />,
-	document.getElementById('app')
-);
-
-module.exports = HelloWorld;
+ReactDOM.render(routes, document.getElementById('app'));
