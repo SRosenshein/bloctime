@@ -16,7 +16,7 @@ var TimerContainer = React.createClass({
 	componentDidMount: function() {
 		this.originalTime = this.props.route.seconds
 		this.setState({
-			seconds: this.props.route.seconds
+			seconds: this.originalTime
 		});
 	},
 	tick: function() {
