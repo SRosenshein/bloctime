@@ -8,8 +8,10 @@ function Timer (props) {
 		<div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
 			<h1>{props.seconds}</h1>
 			<div className="col-sm-12 text-center">
-				<button type="button" className="btn btn-lg btn-success" style={styles.space} onClick={props.tick}>Start</button>
-				<button type="button" className="btn btn-lg btn-danger" style={styles.space} onClick={props.tick}>Pause</button>
+				<h3>{props.header}</h3>
+				{props.isTicking
+				? <button type="button" className="btn btn-lg btn-danger" style={styles.space} onClick={props.onReset}>Reset Session</button>
+				: <button type="button" className="btn btn-lg btn-success" style={styles.space} onClick={props.tick}>Start Session</button> }
 			</div>
 		</div>
 	)
@@ -17,8 +19,10 @@ function Timer (props) {
 
 Timer.propTypes = {
 	seconds: PropTypes.number.isRequired,
-	onPause: PropTypes.func.isRequired,
-	tick: PropTypes.func.isRequired
+	isTicking: PropTypes.bool.isRequired,
+	onReset: PropTypes.func.isRequired,
+	tick: PropTypes.func.isRequired,
+	header: PropTypes.string.isRequired
 }
 
 module.exports = Timer;

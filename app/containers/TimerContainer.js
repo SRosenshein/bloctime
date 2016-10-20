@@ -8,30 +8,37 @@ var TimerContainer = React.createClass({
 	getInitialState: function() {
 		return {
 			seconds: 0,
-			isPaused: false
+			isTicking: false
 		}
 	},
 	componentDidMount: function() {
+		this.originalTime = this.props.route.seconds
 		this.setState({
 			seconds: this.props.route.seconds
 		});
 	},
 	tick: function() {
-		setTimeout(function() {
+		this.setState({isTicking: true});
+		this.interval = setInterval(function() {
 			var seconds = this.state.seconds;
 			this.setState({seconds: seconds - 1});
-			tick();
-		}.bind(this), 1000);
+		}.bind(this), 1000)
 	},
-	handlePause: function() {
-
+	handleReset: function() {
+		window.clearInterval(this.interval)
+		this.setState({
+			isTicking: false,
+			seconds: this.originalTime
+		});
 	},
 	render: function() {
 		return (
 			<Timer 
 				tick={this.tick}
-				onPause={this.handlePause}
-				seconds={this.state.seconds} />
+				isTicking={this.state.isTicking}
+				onReset={this.handleReset}
+				seconds={this.state.seconds}
+				header={this.props.route.header} />
 		)
 	}
 });
