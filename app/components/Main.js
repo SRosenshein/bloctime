@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var Main = React.createClass({
 	render: function() {
@@ -7,7 +9,7 @@ var Main = React.createClass({
 				<div className="navbar navbar-default">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							Bloctime
+							<Link to='/'><span className="navbar-brand">Bloctime</span></Link>
 						</div>
 						<ul className="nav navbar-nav navbar-right">
 							<li>Item One</li>

@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
-var moment = require('moment');
 
 function Timer (props) {
 	return (
@@ -10,7 +9,7 @@ function Timer (props) {
 			<div className="col-sm-12 text-center">
 				<h3>{props.header}</h3>
 				{props.isTicking
-				? <button type="button" className="btn btn-lg btn-danger" style={styles.space} onClick={props.onReset}>Reset Session</button>
+				? <button type="button" className="btn btn-sm btn-danger" style={styles.space} onClick={props.onReset}>Reset Session</button>
 				: <button type="button" className="btn btn-lg btn-success" style={styles.space} onClick={props.tick}>Start Session</button> }
 			</div>
 		</div>
@@ -18,7 +17,7 @@ function Timer (props) {
 }
 
 Timer.propTypes = {
-	seconds: PropTypes.number.isRequired,
+	seconds: PropTypes.string.isRequired,
 	isTicking: PropTypes.bool.isRequired,
 	onReset: PropTypes.func.isRequired,
 	tick: PropTypes.func.isRequired,

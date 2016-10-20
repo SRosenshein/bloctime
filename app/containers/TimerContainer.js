@@ -1,5 +1,7 @@
 var React = require('react');
 var Timer = require('../components/Timer');
+var moment = require('moment');
+require('moment-duration-format');
 
 var TimerContainer = React.createClass({
 	contextTypes: {
@@ -37,7 +39,7 @@ var TimerContainer = React.createClass({
 				tick={this.tick}
 				isTicking={this.state.isTicking}
 				onReset={this.handleReset}
-				seconds={this.state.seconds}
+				seconds={moment.duration(this.state.seconds, "seconds").format("mm:ss")}
 				header={this.props.route.header} />
 		)
 	}
