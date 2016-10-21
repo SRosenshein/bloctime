@@ -8,7 +8,7 @@ require('moment-duration-format');
 function Timer (props) {
 	return (
 		<div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
-			<h1>{moment.duration(props.seconds, "seconds").format('mm:ss')}</h1>
+			<h1>{moment.duration(props.seconds, "seconds").format('mm:ss', {trim: false})}</h1>
 			<div className="col-sm-12 text-center">
 				<h3>{props.header}</h3>
 				{props.isTicking

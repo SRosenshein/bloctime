@@ -17,12 +17,30 @@ var TimerContainer = React.createClass({
 			seconds: this.originalTime
 		});
 	},
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({seconds: nextProps.route.seconds})
+		this.originalTime = nextProps.route.seconds;
+	},
 	tick: function() {
 		this.setState({isTicking: true});
 		this.interval = setInterval(function() {
 			var seconds = this.state.seconds;
 			this.setState({seconds: seconds - 1});
+
+			if (this.state.seconds == 0){
+				this.newSession();
+			} 
 		}.bind(this), 1000)
+	},
+	newSession: function() {
+		window.clearInterval(this.interval)
+		this.setState({isTicking: false});
+		var activePath = this.props.location.pathname; 
+		if (activePath == '/work'){
+			this.context.router.push({pathname: '/break'})
+		} else if (activePath == '/break'){
+			this.context.router.push({pathname: '/work'})
+		} else {this.context.router.push({pathname: '/test'})}
 	},
 	handleReset: function() {
 		window.clearInterval(this.interval)

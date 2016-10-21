@@ -14,6 +14,7 @@ var routes = (
 			<IndexRoute component={Home} />
 			<Route path='work' header="Work Session" seconds={1500} component={TimerContainer} />
 			<Route path='break' header="Break Time" seconds={300} component={TimerContainer} />
+			<Route path='test' header="Test" seconds={3} component={TimerContainer} />
 		</Route>
 	</Router>
 ); // 1500s = 25min, 300s = 5min, 1800s = 30min
