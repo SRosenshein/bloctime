@@ -1,5 +1,7 @@
 var React = require('react');
 var Timer = require('../components/Timer');
+var buzz = require('buzz');
+var mySound = new buzz.sound("app/assets/sounds/ding", {preload: true, formats: ['mp3']});
 
 var TimerContainer = React.createClass({
 	contextTypes: {
@@ -29,6 +31,7 @@ var TimerContainer = React.createClass({
 			this.setState({seconds: seconds - 1});
 
 			if (this.state.seconds == 0){
+				mySound.play();
 				this.handleSession();
 			} 
 		}.bind(this), 1000)
