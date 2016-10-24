@@ -35,23 +35,29 @@ var TimerContainer = React.createClass({
 	},
 	handleSession: function() {
 		window.clearInterval(this.interval)
-		this.setState({isTicking: false});
+		var newState = {isTicking: false};
 		var activePath = this.props.location.pathname;
 		var sessionCount = this.state.sessionCount;
 
-		if (activePath == '/work'){
-			this.setState({sessionCount: sessionCount + 1});
-
-			if (this.state.sessionCount % 4 != 0){
-				this.context.router.push({pathname: '/break'})
-			} else {
-				this.context.router.push({pathname: '/longbreak'})
-			}
-		} else if (activePath == '/break'){
-			this.context.router.push({pathname: '/work'})
-		} else if (activePath == '/longbreak'){
-			this.context.router.push({pathname: '/work'})
+		/* Extra long break every 4 work sessions */
+		switch (activePath){
+			case '/work':
+				sessionCount++;
+				if (sessionCount % 4 != 0){
+					this.context.router.push({pathname: '/break'})
+				} else {
+					this.context.router.push({pathname: '/longbreak'})
+				}
+				break;
+			case '/break':
+			case '/longbreak':
+				this.context.router.push({pathname: '/work'})
+				break;
+			default: 
+				this.context.router.push({pathname: '/'})
 		}
+		newState.sessionCount = sessionCount;
+		this.setState(newState);
 	},
 	handleReset: function() {
 		window.clearInterval(this.interval)
