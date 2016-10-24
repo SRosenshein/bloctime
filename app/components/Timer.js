@@ -15,6 +15,7 @@ function Timer (props) {
 				? <button type="button" className="btn btn-sm btn-danger" style={styles.space} onClick={props.onReset}>Reset Session</button>
 				: <button type="button" className="btn btn-lg btn-success" style={styles.space} onClick={props.tick}>Start Session</button> }
 			</div>
+			<small>Consecutive work sessions completed: {props.sessionCount}</small>
 		</div>
 	)
 }
@@ -24,7 +25,8 @@ Timer.propTypes = {
 	isTicking: PropTypes.bool.isRequired,
 	onReset: PropTypes.func.isRequired,
 	tick: PropTypes.func.isRequired,
-	header: PropTypes.string.isRequired
+	header: PropTypes.string.isRequired,
+	sessionCount: PropTypes.number.isRequired
 }
 
 module.exports = Timer;

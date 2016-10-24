@@ -8,7 +8,8 @@ var TimerContainer = React.createClass({
 	getInitialState: function() {
 		return {
 			seconds: 0,
-			isTicking: false
+			isTicking: false,
+			sessionCount: 0
 		}
 	},
 	componentDidMount: function() {
@@ -28,19 +29,29 @@ var TimerContainer = React.createClass({
 			this.setState({seconds: seconds - 1});
 
 			if (this.state.seconds == 0){
-				this.newSession();
+				this.handleSession();
 			} 
 		}.bind(this), 1000)
 	},
-	newSession: function() {
+	handleSession: function() {
 		window.clearInterval(this.interval)
 		this.setState({isTicking: false});
-		var activePath = this.props.location.pathname; 
+		var activePath = this.props.location.pathname;
+		var sessionCount = this.state.sessionCount;
+
 		if (activePath == '/work'){
-			this.context.router.push({pathname: '/break'})
+			this.setState({sessionCount: sessionCount + 1});
+
+			if (this.state.sessionCount % 4 != 0){
+				this.context.router.push({pathname: '/break'})
+			} else {
+				this.context.router.push({pathname: '/longbreak'})
+			}
 		} else if (activePath == '/break'){
 			this.context.router.push({pathname: '/work'})
-		} else {this.context.router.push({pathname: '/test'})}
+		} else if (activePath == '/longbreak'){
+			this.context.router.push({pathname: '/work'})
+		}
 	},
 	handleReset: function() {
 		window.clearInterval(this.interval)
@@ -56,7 +67,8 @@ var TimerContainer = React.createClass({
 				isTicking={this.state.isTicking}
 				onReset={this.handleReset}
 				seconds={this.state.seconds}
-				header={this.props.route.header} />
+				header={this.props.route.header}
+				sessionCount={this.state.sessionCount} />
 		)
 	}
 });

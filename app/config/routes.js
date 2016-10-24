@@ -12,8 +12,9 @@ var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home} />
-			<Route path='work' header="Work Session" seconds={1500} component={TimerContainer} />
-			<Route path='break' header="Break Time" seconds={300} component={TimerContainer} />
+			<Route path='work' header="Work Session" seconds={5} component={TimerContainer} />
+			<Route path='break' header="Break Time" seconds={3} component={TimerContainer} />
+			<Route path='longbreak' header="Extra Break Time" seconds={8} component={TimerContainer} />
 			<Route path='test' header="Test" seconds={3} component={TimerContainer} />
 		</Route>
 	</Router>
