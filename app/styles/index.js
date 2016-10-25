@@ -4,6 +4,12 @@ var styles = {
 	},
 	space: {
 		margin: '15px'
+	},
+	right: {
+		float: 'right'
+	},
+	spacetop: {
+		marginTop: '70px'
 	}
 }
 

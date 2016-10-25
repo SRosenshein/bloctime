@@ -1,0 +1,13 @@
+html {
+	height: 100%;,
+	font-size: 100%;
+}
+
+body: {
+	min-height: 100%
+}
+
+.task-list {
+	margin: 0;
+	background: red;
+}
