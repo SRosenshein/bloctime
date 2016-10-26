@@ -10,6 +10,10 @@ var styles = {
 	},
 	spacetop: {
 		marginTop: '70px'
+	},
+	deleteButton: {
+		color: 'red',
+		cursor: 'pointer'
 	}
 }
 

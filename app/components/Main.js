@@ -11,10 +11,6 @@ var Main = React.createClass({
 						<div className="navbar-header">
 							<Link to='/'><span className="navbar-brand">Bloctime</span></Link>
 						</div>
-						<ul className="nav navbar-nav navbar-right">
-							<li>Item One</li>
-							<li>Item Two</li>
-						</ul>
 					</div>
 				</div>
 				{this.props.children}

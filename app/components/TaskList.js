@@ -5,6 +5,7 @@ var styles = require('../styles');
 function TaskList (props) {
 	return (
 		<div>
+			<h2>Enter new task:</h2>
 			<form onSubmit={props.onSubmit} >
 				<div className="form-group">
 					<input className='form-control' onChange={props.onChange} value={props.value} type="text" />
@@ -14,9 +15,9 @@ function TaskList (props) {
 				</div>
 			</form>
 			<h3 style={styles.spacetop}>Task History</h3>
-				<ul>
-					{props.items.map(props.createItem)}
-				</ul>
+				<ol>
+					{props.items.map(props.createItem).reverse()}
+				</ol>
 		</div>
 	);
 }

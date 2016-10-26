@@ -22,8 +22,8 @@ var TaskListContainer = React.createClass({
 		};
 	},
 	componentWillMount: function(){
-		var firebaseRef = firebase.database().ref().child("items");
-		this.bindAsArray(firebaseRef, 'items');
+		this.firebaseRef = firebase.database().ref().child("items");
+		this.bindAsArray(this.firebaseRef, 'items');
 	},
 	handleSubmit: function(e){
 		e.preventDefault();
@@ -41,8 +41,12 @@ var TaskListContainer = React.createClass({
 		return (
 			<li key={index}>
 				{item.text}
+				<span onClick={this.removeItem.bind(null, item['.key'])} style={styles.deleteButton}><small> delete</small></span>
 			</li>
 		);
+	},
+	removeItem: function(key) {
+		this.firebaseRef.child(key).remove();
 	},
 	render: function(){
 		return (
