@@ -6,12 +6,14 @@ var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
 var Home = require('../components/Home');
+var About = require('../components/About');
 var TimerContainer = require('../containers/TimerContainer');
 
 var routes = (
 	<Router history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home} />
+			<Route path='about' component={About} />
 			<Route path='work' header="Work Session" seconds={1500} component={TimerContainer} />
 			<Route path='break' header="Break Time" seconds={300} component={TimerContainer} />
 			<Route path='longbreak' header="Extra Break Time" seconds={1800} component={TimerContainer} />

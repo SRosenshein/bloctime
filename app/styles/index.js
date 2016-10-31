@@ -14,6 +14,12 @@ var styles = {
 	deleteButton: {
 		color: 'red',
 		cursor: 'pointer'
+	},
+	plain: {
+		margin: '15px',
+		textDecoration: 'none',
+		cursor: 'pointer',
+		color: 'black'
 	}
 }
 

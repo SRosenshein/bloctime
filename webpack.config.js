@@ -4,9 +4,10 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 	filename: 'index.html',
 	inject: 'body'
 });
-
+var port = process.env.PORT || 8080;
 module.exports = {
 	entry: [
+		'webpack-dev-server/client?http://localhost:' + port,
 		'./app/index.js'
 	],
 	output: {
