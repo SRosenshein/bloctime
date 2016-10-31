@@ -1,7 +1,7 @@
 var Webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'dist');
+var buildPath = path.resolve(__dirname, 'public', 'build');
 var mainPath = path.resolve(__dirname, 'app', 'index.js');
 
 var config = {
@@ -10,7 +10,7 @@ var config = {
 	entry: mainPath,
 	output: {
 		path: buildPath,
-		filename: 'index_bundle.js'
+		filename: 'bundle.js'
 	},
 	module: {
 		loaders: [{

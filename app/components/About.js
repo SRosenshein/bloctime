@@ -20,17 +20,16 @@ function About (props) {
 					<li>If a distraction arises during a work session, the user is expected to write it down and tend to it once the session is complete</li>	
 				</ul>
 
-				<p><small>Bloctime project by <a href="http://www.github.com/srosenshein">Sam Rosenshein</a> with assistance by <a href="http://www.bloc.io">Bloc</a>
+				<h4>Technologies Used:</h4>
+				<ul>
+					<li>ReactJS</li>
+					<li>FirebaseJS</li>
+					<li>Babel</li>
+					<li>Webpack</li>
+					<li>Heroku</li>
+				</ul>
 
-					<p>Technologies Used:
-					<ul>
-						<li>ReactJS</li>
-						<li>FirebaseJS</li>
-						<li>Babel</li>
-						<li>Webpack</li>
-						<li>Heroku</li>
-					</ul></p>
-				</small></p>
+				<p><small>Bloctime project by <a href="http://www.github.com/srosenshein">Sam Rosenshein</a> with assistance by <a href="http://www.bloc.io">Bloc</a></small></p>
 			</div>
 		</div>
 
