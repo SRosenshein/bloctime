@@ -8,7 +8,7 @@ function TaskList (props) {
 			<h2>Enter new task:</h2>
 			<form onSubmit={props.onSubmit} >
 				<div className="form-group">
-					<input className='form-control' onChange={props.onChange} value={props.value} type="text" />
+					<input className='form-control' onChange={props.onChange} value={props.value} type="text" autoFocus={true} />
 					<button className='btn btn-sm btn-primary' style={styles.right} type='submit'>
 						Add Task
 					</button>
