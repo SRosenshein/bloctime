@@ -14,7 +14,7 @@ function TaskList (props) {
 					</button>
 				</div>
 			</form>
-			<h3 style={styles.spacetop}>Task History</h3>
+			<h3 style={styles.spacetop}>Current Tasks</h3>
 				<ol>
 					{props.items.map(props.createItem).reverse()}
 				</ol>

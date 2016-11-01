@@ -12,7 +12,7 @@ var styles = {
 		marginTop: '70px'
 	},
 	deleteButton: {
-		color: 'red',
+		color: 'green',
 		cursor: 'pointer'
 	},
 	plain: {
