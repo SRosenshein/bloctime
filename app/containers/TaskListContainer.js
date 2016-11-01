@@ -41,7 +41,7 @@ var TaskListContainer = React.createClass({
 		return (
 			<li key={index}>
 				{item.text}
-				<span onClick={this.removeItem.bind(null, item['.key'])} style={styles.deleteButton}><small> completed</small></span>
+				<span onClick={this.removeItem.bind(null, item['.key'])} style={styles.deleteButton}><small> delete</small></span>
 			</li>
 		);
 	},
