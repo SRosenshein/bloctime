@@ -12,6 +12,7 @@ var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'public');
 
 app.use(express.static(publicPath));
+app.use('/app/assets', express.static(__dirname + '/app/assets'));
 
 app.all('/db/*', function (req, res) {
 	proxy.web(req, res, {
