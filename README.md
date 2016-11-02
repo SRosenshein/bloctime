@@ -1,5 +1,7 @@
 **Bloctime App README**
 
+App live on: https://bloctime-sam.herokuapps.com
+
 **The Pomodoro Time Management Technique:**
 
 - Technique based on concept that a person should cycle between a 25-minute work session and a 5-minute break session
