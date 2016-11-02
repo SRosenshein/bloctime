@@ -1,4 +1,4 @@
-var Webpack = require('webpack');
+/*var Webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
@@ -22,13 +22,13 @@ var config = {
 	plugins: [new Webpack.HotModuleReplacementPlugin()]
 };
 
-module.exports = config;
+module.exports = config;*/
 
 
 
 
 
-/*var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 	template: __dirname + '/app/index.html',
 	filename: 'index.html',
@@ -50,5 +50,5 @@ module.exports = {
 		]
 	},
 	plugins: [HtmlWebpackPluginConfig]
-};*/
+};
 
