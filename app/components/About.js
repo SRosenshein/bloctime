@@ -29,7 +29,7 @@ function About (props) {
 					<li>Heroku</li>
 				</ul>
 
-				<p><small>Bloctime project by <a href="http://www.github.com/srosenshein">Sam Rosenshein</a> with assistance by <a href="http://www.bloc.io">Bloc</a></small></p>
+				<p><small>Bloctime project by <a href="http://www.github.com/srosenshein/bloctime">Sam Rosenshein</a> with assistance by <a href="http://www.bloc.io">Bloc</a></small></p>
 			</div>
 		</div>
 
