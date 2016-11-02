@@ -1,6 +1,6 @@
 **Bloctime App README**
 
-App live on: https://bloctime-sam.herokuapps.com
+App live on: https://bloctime-sam.herokuapp.com
 
 **The Pomodoro Time Management Technique:**
 
