@@ -2,6 +2,12 @@
 
 App live on: https://bloctime-sam.herokuapp.com
 
+To run on local machine, clone or download this repo then:
+```
+npm install
+npm run test
+```
+
 **The Pomodoro Time Management Technique:**
 
 - Technique based on concept that a person should cycle between a 25-minute work session and a 5-minute break session
